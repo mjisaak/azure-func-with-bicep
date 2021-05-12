@@ -1,12 +1,12 @@
 param function_app_name string = 'mjisaak-bicep-func'
 param appservice_plan_name string = 'mjisaak-bicep-asp'
 param app_insights_name string = 'mjisaak-bicep-appinsights'
-param storage_account_name string = 'mjisaak0bicep0stac'
+param storage_account_name string = 'mjisaak'
 param location string = resourceGroup().location
 
 var unique_string = uniqueString(resourceGroup().id)
 var unique_function_name = '${function_app_name}-${unique_string}'
-var unique_storage_name = '${storage_account_name}-${unique_string}'
+var unique_storage_name = '${storage_account_name}0${unique_string}'
 
 resource storage_account 'Microsoft.Storage/storageAccounts@2019-06-01' = {
   name: unique_storage_name
