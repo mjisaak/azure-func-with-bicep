@@ -33,6 +33,7 @@
   "homepage": "https://github.com/mjisaak/azure-func-with-bicep#readme",
   "devDependencies": {
     "@azure/functions": "^1.0.1-beta1",
+    "azure-functions-core-tools": "^3.0.3442",
     "npm-run-all": "^4.1.5",
     "typescript": "^3.3.3"
   }
