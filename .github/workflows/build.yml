@@ -1,0 +1,38 @@
+name: Build and deploy Node.js project to Azure Function App
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+env:
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: './src/function'
+  NODE_VERSION: '14.x'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@v2
+
+      - name: Setup Node ${{ env.NODE_VERSION }} Environment
+        uses: actions/setup-node@v1
+        with:
+        node-version: ${{ env.NODE_VERSION }}
+
+      - name: 'Resolve Project Dependencies Using Npm'
+        shell: pwsh
+        run: |
+          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          npm ci
+          npm run pack
+          popd
+
+      - name: Upload Bicep
+        uses: actions/upload-artifact@v2
+        with:
+          name: bicep-files
+          path: ./src/function/function.zip
+          if-no-files-found: error
