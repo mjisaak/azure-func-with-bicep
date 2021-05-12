@@ -1,0 +1,39 @@
+{
+  "name": "azure-func-with-bicep",
+  "author": "Martin Brandl",
+  "version": "1.0.0",
+  "description": "my",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:production": "npm run prestart && npm prune --production",
+    "pack": "npm run build:production && func pack",
+    "watch": "tsc --w",
+    "prestart": "npm run build && func extensions install",
+    "start:host": "func start",
+    "start": "npm-run-all --parallel start:host watch",
+    "test": "echo \"No tests yet...\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjisaak/azure-func-with-bicep.git"
+  },
+  "keywords": [
+    "Azure",
+    "TypeScript",
+    "NodeJs",
+    "Azure Function",
+    "IaC",
+    "Bicep"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mjisaak/azure-func-with-bicep/issues"
+  },
+  "homepage": "https://github.com/mjisaak/azure-func-with-bicep#readme",
+  "devDependencies": {
+    "@azure/functions": "^1.0.1-beta1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^3.3.3"
+  }
+}

@@ -1,6 +1,7 @@
 {
   "name": "azure-func-with-bicep",
-  "version": "1.0",
+  "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "build": "tsc",
     "build:production": "npm run prestart && npm prune --production",
