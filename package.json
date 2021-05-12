@@ -1,9 +1,10 @@
 {
-  "name": "",
-  "version": "",
-  "scripts" : {
+  "name": "azure-func-with-bicep",
+  "version": "1.0",
+  "scripts": {
     "build": "tsc",
     "build:production": "npm run prestart && npm prune --production",
+    "pack": "npm run build:production && func pack",
     "watch": "tsc --w",
     "prestart": "npm run build && func extensions install",
     "start:host": "func start",
