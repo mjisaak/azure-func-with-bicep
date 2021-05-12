@@ -73,7 +73,7 @@ resource function_app 'Microsoft.Web/sites@2020-12-01' = {
         }
         {
           name: 'WEBSITE_RUN_FROM_PACKAGE'
-          value: 'https://blobindexstorage.blob.core.windows.net/public/functestdelme.zip'
+          value: 'https://github.com/mjisaak/azure-func-with-bicep/releases/download/v0.0.1/function.zip'
         }
       ]
     }
