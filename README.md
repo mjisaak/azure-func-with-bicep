@@ -6,11 +6,16 @@ This sample uses Bicep to create the necessary infrastructure for the project.
 ## Prerequisites
 
 - Azure Function CLI
+- Azure CLI
 - Azure Bicep
 
 ## Usage
 
-- Install dependencies using `npm install`
+You can deploy the sample using the `Azure CLI`:
+
+```bash
+az deployment group create -f "./src/infrastructure/main.bicep" -g "rg-my-sample"
+```
 
 ## How I've created the project
 
